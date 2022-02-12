@@ -14,13 +14,13 @@ NAME	=	jeu
 
 RM		+=	-r
 
-CC		=	g++ -std=c++17 -lsfml-graphics -lsfml-window -lsfml-system
+CC		=	g++ -std=c++17
 
 CFLAGS		+=	 -Wall -Wextra
 
 CPPFLAGS	+=	-I include/
 
-LDFLAGS		+=
+LDFLAGS		+=	-lsfml-graphics -lsfml-window -lsfml-system
 
 .PHONY:	all clean fclean re
 
