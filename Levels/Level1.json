@@ -1,0 +1,25 @@
+{
+    "player": [
+        {
+            "Turn 1": "Ta maman/test/retest",
+            "Turn 2": "Ta maman/test/retest",
+            "Turn 3": "Ta maman/test/retest",
+            "Turn 4": "Ta maman/test/retest",
+            "Turn 5": "Ta maman/test/retest",
+            "Turn 6": "Ta maman/test/retest",
+            "Turn 7": "Ta maman/test/retest"
+        }
+    ],
+    "enemy": [
+        {
+            "Turn 1": "Ton papa/test/retest",
+            "Turn 2": "Ton papa/test/retest",
+            "Turn 3": "Ton papa/test/retest",
+            "Turn 4": "Ton papa/test/retest",
+            "Turn 5": "Ton papa/test/retest",
+            "Turn 6": "Ton papa/test/retest",
+            "Turn 7": "Ton papa/test/retest"
+        }
+
+    ]
+}
