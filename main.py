@@ -34,6 +34,10 @@ if __name__ == '__main__':
     gorille = character.Character("assets/gorille.png", [100, 300])
     gros = character.Character("assets/full_clodo.png", [900, 300])
 
+    pygame.mixer.music.load("assets/Music/main_theme.mp3")
+    pygame.mixer.music.play(-1)
+    pygame.mixer.music.set_volume(0.6)
+
     menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
                             theme=pygame_menu.themes.THEME_GREEN)
     menu.add.button('Play', start_the_game)
