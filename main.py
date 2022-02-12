@@ -1,9 +1,18 @@
+##
+# EPITECH PROJECT, 2022
+# TekJam
+# File description:
+# menu
+##
+
 import pygame
+import pygame_menu
+from src import character
 
-if __name__ == '__main__':
-    pygame.init()
+WIDTH = 1280
+HEIGHT = 720
 
-    screen = pygame.display.set_mode([500, 500])
+def start_the_game():
 
     running = True
     while running:
@@ -12,10 +21,21 @@ if __name__ == '__main__':
             if event.type == pygame.QUIT:
                 running = False
 
-        screen.fill((255, 255, 255))
-
-        pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+        surface.fill((255, 255, 255))
+        surface.blit(gorille.sprite, gorille.rect)
+        surface.blit(gros.sprite, gros.rect)
 
         pygame.display.flip()
 
-    pygame.quit()
+if __name__ == '__main__':
+    pygame.init()
+
+    surface = pygame.display.set_mode((WIDTH, HEIGHT))
+    gorille = character.Character("assets/gorille.png", [100, 300])
+    gros = character.Character("assets/full_clodo.png", [900, 300])
+
+    menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
+                            theme=pygame_menu.themes.THEME_GREEN)
+    menu.add.button('Play', start_the_game)
+    menu.add.button('Quit', pygame_menu.events.EXIT)
+    menu.mainloop(surface)
