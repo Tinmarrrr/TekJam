@@ -20,19 +20,32 @@ def start_the_game():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    gorille.nextText()
+                if event.key == pygame.K_RIGHT:
+                    clodo.nextText()
 
         surface.fill((255, 255, 255))
         surface.blit(gorille.sprite, gorille.rect)
-        surface.blit(gros.sprite, gros.rect)
+        surface.blit(clodo.sprite, clodo.rect)
+        surface.blit(gorille.currentText, (200, 200))
+        surface.blit(clodo.currentText, (800, 200))
 
         pygame.display.flip()
 
 if __name__ == '__main__':
     pygame.init()
 
+    pygame.font.init()
+    font = pygame.font.SysFont('Arial', 20)
     surface = pygame.display.set_mode((WIDTH, HEIGHT))
-    gorille = character.Character("assets/gorille.png", [100, 300])
-    gros = character.Character("assets/full_clodo.png", [900, 300])
+
+    tab1 = ["OUG", "OUG OUG", "OUG OUG OUG"]
+    tab2 = ["T'AS", "PAS UNE", "CLOPE STP???"]
+    gorille = character.Character("assets/gorille.png", [100, 300], tab1, font)
+    clodo = character.Character("assets/full_clodo.png", [900, 300], tab2, font)
+
 
     menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
                             theme=pygame_menu.themes.THEME_GREEN)
