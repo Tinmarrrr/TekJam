@@ -39,37 +39,27 @@
     "enemy": [
         {
             "Turn": {
-                "Choice 1": "ta maman",
-                "Choice 2": "ton père",
-                "Choice 3": "ton oncle"
+                "Answer": "ta maman"
             }
         },
         {
             "Turn": {
-                "Choice 1": "ta maman",
-                "Choice 2": "ton père",
-                "Choice 3": "ton oncle"
+                "Answer": "ta maman"
             }
         },
         {
             "Turn": {
-                "Choice 1": "ta maman",
-                "Choice 2": "ton père",
-                "Choice 3": "ton oncle"
+                "Answer": "ta maman"
             }
         },
         {
             "Turn": {
-                "Choice 1": "ta maman",
-                "Choice 2": "ton père",
-                "Choice 3": "ton oncle"
+                "Answer": "ta maman"
             }
         },
         {
             "Turn": {
-                "Choice 1": "ta maman",
-                "Choice 2": "ta maman",
-                "Choice 3": "ta maman"
+                "Answer": "ta maman"
             }
         }
     ]

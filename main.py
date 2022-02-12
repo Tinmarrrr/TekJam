@@ -1,13 +1,6 @@
-##
-# EPITECH PROJECT, 2022
-# TekJam
-# File description:
-# menu
-##
-
 import pygame
 import pygame_menu
-from src import Character
+from src.Character import Character
 
 WIDTH = 1280
 HEIGHT = 720
@@ -34,6 +27,19 @@ def start_the_game():
 
         pygame.display.flip()
 
+
+def initMusic():
+    pygame.mixer.music.load("assets/Music/main_theme.mp3")
+    pygame.mixer.music.play(-1)
+    pygame.mixer.music.set_volume(0.6)
+
+def initMenu():
+    menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
+                            theme=pygame_menu.themes.THEME_GREEN)
+    menu.add.button('Play', start_the_game)
+    menu.add.button('Quit', pygame_menu.events.EXIT)
+    return menu
+
 if __name__ == '__main__':
     pygame.init()
 
@@ -43,16 +49,10 @@ if __name__ == '__main__':
 
     tab1 = ["OUG", "OUG OUG", "OUG OUG OUG"]
     tab2 = ["T'AS", "PAS UNE", "CLOPE STP???"]
-    gorille = Character.Character("assets/gorilla/gorilla_base.png", [100, 300], tab1, font)
-    clodo = Character.Character("assets/enemies/full_clodo.png", [900, 300], tab2, font)
+    gorille = Character("assets/gorilla/gorilla_base.png", [100, 300], tab1, font)
+    clodo = Character("assets/enemies/full_clodo.png", [900, 300], tab2, font)
 
+    initMusic()
+    menu = initMenu()
 
-    pygame.mixer.music.load("assets/Music/main_theme.mp3")
-    pygame.mixer.music.play(-1)
-    pygame.mixer.music.set_volume(0.6)
-
-    menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
-                            theme=pygame_menu.themes.THEME_GREEN)
-    menu.add.button('Play', start_the_game)
-    menu.add.button('Quit', pygame_menu.events.EXIT)
     menu.mainloop(surface)

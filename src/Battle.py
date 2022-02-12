@@ -6,18 +6,22 @@
 ##
 
 import json
-from src.Enemy import Enemy
 from src.Player import Player
 
-def battle(Enemy, Player, Level):
-    file = 'Levels/Level' + str(Level) + '.json'
+def parseJson(level):
+    file = 'Levels/Level' + str(level) + '.json'
     f = open(file)
     data = json.load(f)
-    enemyText = []
+
     playerText = []
+    enemyText = []
+
     for elem in data['player']:
         playerText.append(elem['Turn'])
     for elem in data['enemy']:
         enemyText.append(elem['Turn'])
-    print(playerText[0])
-    
+    return [playerText, enemyText]
+
+def battle(level):
+    texts = parseJson(level)
+    texts[0]
