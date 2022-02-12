@@ -1,0 +1,76 @@
+{
+    "player": [
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ta maman",
+                "Choice 3": "ta maman"
+            }
+        }
+    ],
+    "enemy": [
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ta maman",
+                "Choice 3": "ta maman"
+            }
+        }
+    ]
+}

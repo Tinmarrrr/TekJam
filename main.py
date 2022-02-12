@@ -7,7 +7,7 @@
 
 import pygame
 import pygame_menu
-from src import character
+from src import Character
 
 WIDTH = 1280
 HEIGHT = 720
@@ -43,9 +43,13 @@ if __name__ == '__main__':
 
     tab1 = ["OUG", "OUG OUG", "OUG OUG OUG"]
     tab2 = ["T'AS", "PAS UNE", "CLOPE STP???"]
-    gorille = character.Character("assets/gorille.png", [100, 300], tab1, font)
-    clodo = character.Character("assets/full_clodo.png", [900, 300], tab2, font)
+    gorille = Character.Character("assets/gorilla/gorilla_base.png", [100, 300], tab1, font)
+    clodo = Character.Character("assets/enemies/full_clodo.png", [900, 300], tab2, font)
 
+
+    pygame.mixer.music.load("assets/Music/main_theme.mp3")
+    pygame.mixer.music.play(-1)
+    pygame.mixer.music.set_volume(0.6)
 
     menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
                             theme=pygame_menu.themes.THEME_GREEN)
