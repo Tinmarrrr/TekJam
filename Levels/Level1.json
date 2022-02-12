@@ -1,34 +1,76 @@
 {
     "player": [
         {
-            "title_turn": "Ta maman/test/retest",
-            "Infos": {
-                "vie": 100
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
             }
         },
         {
-            "Turn 2": "Ta maman/test/retest"
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
         },
         {
-            "Turn 3": "Ta maman/test/retest"
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
         },
         {
-            "Turn 4": "Ta maman/test/retest"
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
         },
         {
-            "Turn 5": "Ta maman/test/retest"
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ta maman",
+                "Choice 3": "ta maman"
+            }
         }
     ],
     "enemy": [
         {
-            "Turn 1": "Ton papa/test/retest",
-            "Turn 2": "Ton papa/test/retest",
-            "Turn 3": "Ton papa/test/retest",
-            "Turn 4": "Ton papa/test/retest",
-            "Turn 5": "Ton papa/test/retest",
-            "Turn 6": "Ton papa/test/retest",
-            "Turn 7": "Ton papa/test/retest"
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ton père",
+                "Choice 3": "ton oncle"
+            }
+        },
+        {
+            "Turn": {
+                "Choice 1": "ta maman",
+                "Choice 2": "ta maman",
+                "Choice 3": "ta maman"
+            }
         }
-
     ]
 }
