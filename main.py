@@ -93,7 +93,7 @@ def choose_menu():
 def initMusic():
     pygame.mixer.music.load("assets/Music/main_theme.mp3")
     pygame.mixer.music.play(-1)
-    pygame.mixer.music.set_volume(0.0)
+    pygame.mixer.music.set_volume(0.5)
 
 ITEMS = [
     "assets/gorilla/gorilla_cigarette.png",
