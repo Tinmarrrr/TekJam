@@ -25,7 +25,7 @@ class Character:
 
     def getRect(self):
         return self.sprite.get_bounding_rect()
-    
+
     def setPosition(self, x, y):
         self.logorect.x = x
         self.logorect.y = y
