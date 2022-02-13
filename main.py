@@ -2,9 +2,26 @@ import pygame
 import pygame_menu
 
 from src.Character import Character
+from src.Battle import battle
+import json
 
 WIDTH = 1280
 HEIGHT = 720
+
+
+def parseJson(level):
+    file = 'Levels/Level' + str(level) + '.json'
+    f = open(file)
+    data = json.load(f)
+
+    playerText = []
+    enemyText = []
+
+    for elem in data['player']:
+        playerText.append(elem['Turn'])
+    for elem in data['enemy']:
+        enemyText.append(elem['Turn'])
+    return [playerText, enemyText]
 
 def choose_menu():
     gorille = Character("assets/gorilla/gorilla_base.png", "assets/gorilla/gorilla_base.png", [100, 300], tab1, font)
@@ -18,10 +35,15 @@ def choose_menu():
 
     w, h = pygame.display.get_surface().get_size()
     running = True
+    start = False
+    lvl = 1
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    start = True
         surface.fill((255, 255, 255))
 
         clodo.setLogoPos(10, 10) #1
@@ -32,12 +54,15 @@ def choose_menu():
         maman.setLogoPos(((w - 300) / 2), ((h - 300) / 1)) #5
         noel.setLogoPos((w - 300), (h - 300)) #6
 
-        surface.blit(clodo.headSprite, clodo.logorect)
-        surface.blit(titi.headSprite, titi.logorect)
-        surface.blit(gaston.headSprite, gaston.logorect)
-        surface.blit(ronald.headSprite, ronald.logorect)
-        surface.blit(maman.headSprite, maman.logorect)
-        surface.blit(noel.headSprite, noel.logorect)
+        if start == False:
+            surface.blit(clodo.headSprite, clodo.logorect)
+            surface.blit(titi.headSprite, titi.logorect)
+            surface.blit(gaston.headSprite, gaston.logorect)
+            surface.blit(ronald.headSprite, ronald.logorect)
+            surface.blit(maman.headSprite, maman.logorect)
+            surface.blit(noel.headSprite, noel.logorect)
+        else:
+            battle(surface, parseJson(lvl), font, 0)
         pygame.display.flip()
 
 
@@ -56,18 +81,18 @@ def choose_menu():
 #                     clodo.nextText()
 
 #         surface.fill((255, 255, 255))
-        # surface.blit(gorille.sprite, gorille.rect)
-        # surface.blit(clodo.sprite, clodo.rect)
-        # surface.blit(gorille.currentText, (200, 200))
-        # surface.blit(clodo.currentText, (800, 200))
+#         surface.blit(gorille.sprite, gorille.rect)
+#         surface.blit(clodo.sprite, clodo.rect)
+#         surface.blit(gorille.currentText, (200, 200))
+#         surface.blit(clodo.currentText, (800, 200))
 
-        # pygame.display.flip()
+#         pygame.display.flip()
 
 
 def initMusic():
     pygame.mixer.music.load("assets/Music/main_theme.mp3")
     pygame.mixer.music.play(-1)
-    pygame.mixer.music.set_volume(0.6)
+    pygame.mixer.music.set_volume(0.0)
 
 def initMenu():
     menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
@@ -83,10 +108,8 @@ if __name__ == '__main__':
     font = pygame.font.SysFont('Arial', 20)
     surface = pygame.display.set_mode((WIDTH, HEIGHT))
 
-    tab1 = ["OUG", "OUG OUG", "OUG OUG OUG"]
-    tab2 = ["T'AS", "PAS UNE", "CLOPE STP???"]
-    # gorille = Character("assets/gorilla/gorilla_base.png", [100, 300], tab1, font)
-    # clodo = Character("assets/enemies/full_clodo.png", [900, 300], tab2, font)
+    tab1 = [" ", " "]
+    tab2 = [" ", " "]
 
     initMusic()
     menu = initMenu()
