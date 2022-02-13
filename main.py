@@ -1,27 +1,11 @@
 import pygame
 import pygame_menu
 
-from src.Character import Character
+from src.character import Character
 from src.Battle import battle
-import json
 
 WIDTH = 1280
 HEIGHT = 720
-
-
-def parseJson(level):
-    file = 'Levels/Level' + str(level) + '.json'
-    f = open(file)
-    data = json.load(f)
-
-    playerText = []
-    enemyText = []
-
-    for elem in data['player']:
-        playerText.append(elem['Turn'])
-    for elem in data['enemy']:
-        enemyText.append(elem['Turn'])
-    return [playerText, enemyText]
 
 def choose_menu():
     gorille = Character("assets/gorilla/gorilla_base.png", "assets/gorilla/gorilla_base.png", [100, 300], tab1, font)

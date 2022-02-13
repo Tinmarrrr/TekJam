@@ -4,3 +4,5 @@ a.out
 jeu
 .DS_Store
 __pycache__
+mymain.py
+venv

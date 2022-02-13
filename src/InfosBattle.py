@@ -1,7 +1,7 @@
 import json
 
 LEVELS = [
-    "assets/conversations/conv_example.json"
+    "assets/conversations/conv_clodo.json"
 ]
 
 class InfosEnemy:
@@ -89,6 +89,8 @@ class InfosBattle:
         i = 1
         for turn in self.turns:
             print("[Turn ", i, " !]")
+            print("He says: " + turn.punch)
+            print()
             turn.dump()
             print()
             i += 1
