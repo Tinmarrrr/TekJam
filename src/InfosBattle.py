@@ -1,6 +1,11 @@
 import json
 
 LEVELS = [
+    "assets/conversations/conv_clodo.json",
+    "assets/conversations/conv_clodo.json",
+    "assets/conversations/conv_clodo.json",
+    "assets/conversations/conv_clodo.json",
+    "assets/conversations/conv_clodo.json",
     "assets/conversations/conv_clodo.json"
 ]
 
