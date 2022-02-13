@@ -55,23 +55,17 @@ def choose_menu():
                 if event.button == 1:
                     infosBt = InfosBattle()
                     if clodo_button.collidepoint(event.pos):
-                        infosBt.loadJson(0)
-                        running = battle(surface, infosBt, font, 0)
+                        running = battle(surface, 0)
                     if titi_button.collidepoint(event.pos):
-                        infosBt.loadJson(1)
-                        running = battle(surface, infosBt, font, 0)
+                        running = battle(surface, 1)
                     if gaston_button.collidepoint(event.pos):
-                        infosBt.loadJson(2)
-                        running = battle(surface, infosBt, font, 0)
+                        running = battle(surface, 2)
                     if ronald_button.collidepoint(event.pos):
-                        infosBt.loadJson(3)
-                        running = battle(surface, infosBt, font, 0)
+                        running = battle(surface, 3)
                     if maman_button.collidepoint(event.pos):
-                        infosBt.loadJson(4)
-                        running = battle(surface, infosBt, font, 0)
+                        running = battle(surface, 4)
                     if noel_button.collidepoint(event.pos):
-                        infosBt.loadJson(5)
-                        running = battle(surface, infosBt, font, 0)
+                        running = battle(surface, 5)
         surface.fill((255, 255, 255))                   #BACK
         clodo.setLogoPos(10, 10)                        #CLODO
         titi.setLogoPos(((w - 300) / 2), 10)            #TITI
