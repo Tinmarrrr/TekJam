@@ -10,7 +10,7 @@ from src.Button import *
 
 WIDTH = 1280
 HEIGHT = 720
-lvl = [0, 1, 2, 3, 4, 5]
+lvl = []
 
 def choose_menu():
     w, h = pygame.display.get_surface().get_size()
@@ -60,19 +60,19 @@ def choose_menu():
                     if clodo_button.collidepoint(event.pos):
                         battle(surface, 0, gorille, clodo)
                         lvl.append(0)
-                    if titi_button.collidepoint(event.pos):
+                    if titi_button.collidepoint(event.pos) and 0 in lvl:
                         battle(surface, 1, gorille, titi)
                         lvl.append(1)
-                    if gaston_button.collidepoint(event.pos):
+                    if gaston_button.collidepoint(event.pos) and 1 in lvl:
                         battle(surface, 2, gorille, gaston)
                         lvl.append(2)
-                    if ronald_button.collidepoint(event.pos):
+                    if ronald_button.collidepoint(event.pos) and 2 in lvl:
                         battle(surface, 3, gorille, ronald)
                         lvl.append(3)
-                    if maman_button.collidepoint(event.pos):
+                    if maman_button.collidepoint(event.pos) and 3 in lvl:
                         battle(surface, 4, gorille, maman)
                         lvl.append(4)
-                    if noel_button.collidepoint(event.pos):
+                    if noel_button.collidepoint(event.pos) and 4 in lvl:
                         battle(surface, 5, gorille, noel)
                         lvl.append(5)
         surface.fill((255, 255, 255))                   #BACK
