@@ -1,13 +1,9 @@
-##
-# EPITECH PROJECT, 2022
-# TekJam
-# File description:
-# menu
-##
-
 import pygame
 import pygame_menu
+
 from src.character import Character
+from src.Battle import battle
+from src.InfosBattle import InfosBattle
 
 WIDTH = 1280
 HEIGHT = 720
@@ -49,6 +45,8 @@ def choose_menu():
     noel_surf = pygame.Surface(noel_button.size)
 
     running = True
+    start = False
+    lvl = 0
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -99,6 +97,43 @@ def start_the_game():
         surface.blit(gorille.currentText, (200, 200))
         surface.blit(clodo.currentText, (800, 200))
         pygame.display.flip()
+        if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    start = True
+        surface.fill((255, 255, 255))
+
+        clodo.setLogoPos(10, 10) #1
+        gaston.setLogoPos(((w - 300) / 2), 10) #2
+        titi.setLogoPos(((w - 300) / 1), 10) #3
+
+        ronald.setLogoPos((10), ((h - 300) / 1)) #4
+        maman.setLogoPos(((w - 300) / 2), ((h - 300) / 1)) #5
+        noel.setLogoPos((w - 300), (h - 300)) #6
+
+        if start == False:
+            surface.blit(clodo.headSprite, clodo.logorect)
+            surface.blit(titi.headSprite, titi.logorect)
+            surface.blit(gaston.headSprite, gaston.logorect)
+            surface.blit(ronald.headSprite, ronald.logorect)
+            surface.blit(maman.headSprite, maman.logorect)
+            surface.blit(noel.headSprite, noel.logorect)
+        else:
+            infosBt = InfosBattle()
+            if battle(surface, infosBt.loadJson(lvl), font, 0) == False:
+                running = False
+        pygame.display.flip()
+
+def initMusic():
+    pygame.mixer.music.load("assets/Music/main_theme.mp3")
+    pygame.mixer.music.play(-1)
+    pygame.mixer.music.set_volume(0.0)
+
+def initMenu():
+    menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
+                            theme=pygame_menu.themes.THEME_GREEN)
+    menu.add.button('Play', choose_menu)
+    menu.add.button('Quit', pygame_menu.events.EXIT)
+    return menu
 
 if __name__ == '__main__':
     pygame.init()
@@ -106,15 +141,10 @@ if __name__ == '__main__':
     font = pygame.font.SysFont('Arial', 20)
     surface = pygame.display.set_mode((WIDTH, HEIGHT))
 
-    tab1 = ["OUG", "OUG OUG", "OUG OUG OUG"]
-    tab2 = ["T'AS", "PAS UNE", "CLOPE STP???"]
+    tab1 = [" ", " "]
+    tab2 = [" ", " "]
 
-    pygame.mixer.music.load("assets/Music/main_theme.mp3")
-    pygame.mixer.music.play(-1)
-    pygame.mixer.music.set_volume(0.0)
+    initMusic()
+    menu = initMenu()
 
-    menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
-                            theme=pygame_menu.themes.THEME_GREEN)
-    menu.add.button('Play', choose_menu)
-    menu.add.button('Quit', pygame_menu.events.EXIT)
     menu.mainloop(surface)
