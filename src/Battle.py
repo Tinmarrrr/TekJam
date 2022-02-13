@@ -2,15 +2,24 @@ from distutils.log import info
 import pygame
 from src.Button import *
 from src.InfosBattle import *
+from src.character import Character
 
-def battle(surface, level):
+def getEnemyResponse(value, infosBt):
+    if value < 0:
+        return infosBt.enemy.winShout
+    elif value > 0:
+        return infosBt.enemy.looseShout
+    else:
+        return infosBt.enemy.middleShout
+
+def battle(surface, level, player, enemy):
     infosBt = InfosBattle()
     infosBt.loadJson(level)
 
-    surface.fill((255, 255, 255))
     shout = infosBt.enemy.middleShout
     confidence = 0
     for turn in infosBt.turns:
+        surface.fill((255, 255, 255))
         running = True
         enemyText = EnemyTextBox(surface, 1280, 0, infosBt.enemy.name + ": " + shout)
         enemyPunch = EnemyTextBox(surface, 1280, 100, turn.punch)
@@ -25,25 +34,26 @@ def battle(surface, level):
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if b1.collidepoint(pygame.mouse.get_pos()):
                         confidence += turn.responses[0].value
+                        shout = getEnemyResponse(turn.responses[0].value, infosBt)
                         running = False
                     if b2.collidepoint(pygame.mouse.get_pos()):
                         confidence += turn.responses[1].value
+                        shout = getEnemyResponse(turn.responses[1].value, infosBt)
                         running = False
                     if b3.collidepoint(pygame.mouse.get_pos()):
                         confidence += turn.responses[2].value
+                        shout = getEnemyResponse(turn.responses[2].value, infosBt)
                         running = False
                     if b4.collidepoint(pygame.mouse.get_pos()):
                         confidence += turn.responses[3].value
+                        shout = getEnemyResponse(turn.responses[3].value, infosBt)
                         running = False
+            surface.blit(player.sprite, player.rect)
+            surface.blit(enemy.sprite, enemy.rect)
             pygame.display.update()
-
-
-    # text1 = font.render(answers[0][turn]["Choice 1"], False, (0, 0, 0))
-    # text2 = font.render(answers[0][turn]["Choice 2"], False, (0, 0, 0))
-    # text3 = font.render(answers[0][turn]["Choice 3"], False, (0, 0, 0))
-    # text4 = font.render(answers[1][turn]["Answer"], False, (0, 0, 0))
-
-    # surface.blit(text1, (200, 100))
-    # surface.blit(text2, (200, 200))
-    # surface.blit(text3, (200, 300))
-    # surface.blit(text4, (200, 400))
+    if confidence < 0:
+        print("You loose agains ", infosBt.enemy.name)
+    elif confidence >= 2:
+        print("You win against ", infosBt.enemy.name)
+    else:
+        print("You pass against ", infosBt.enemy.name)
