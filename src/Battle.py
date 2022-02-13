@@ -1,5 +1,6 @@
 from distutils.log import info
 import pygame
+import random
 from src.Button import *
 from src.InfosBattle import *
 from src.character import Character
@@ -13,12 +14,22 @@ def getEnemyResponse(value, infosBt):
     else:
         return infosBt.enemy.middleShout
 
+PATH_BACKGROUND = [
+    "assets/background/rue.png",
+    "assets/background/night_rue.png",
+    "assets/background/paris.png",
+]
+
+def randomBackgroundSprite():
+    nb = random.randint(0, len(PATH_BACKGROUND) - 1)
+    return PATH_BACKGROUND[nb]
+
 def battle(surface, level, player, enemy):
     infosBt = InfosBattle()
     infosBt.loadJson(level)
 
-    rue = Character("assets/enemies/rue.png",
-                    "assets/enemies/rue.png", [0, 0])
+    path = randomBackgroundSprite()
+    rue = Character(path, path, [0, 0])
     
     rue.setScale(1280, 720)
     
