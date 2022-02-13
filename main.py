@@ -95,8 +95,6 @@ def initMenu():
 
 if __name__ == '__main__':
     pygame.init()
-    pygame.font.init()
-    font = pygame.font.SysFont('Arial', 20)
     surface = pygame.display.set_mode((WIDTH, HEIGHT))
 
     initMusic()
