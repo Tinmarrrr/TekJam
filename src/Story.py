@@ -12,7 +12,7 @@ def textBox(screen, positionX, positionY, text):
 
 def storyPannel(surface, monkey, enemy, text):
     surface.fill((255, 255, 255))
-    enemyText = textBox(surface, 200, 500, text)
+    enemyText = applyBackLine(surface, 200, 500, text, 12)
     surface.blit(monkey.sprite, monkey.rect)
     surface.blit(enemy.sprite, enemy.rect)
     while True:
@@ -22,3 +22,17 @@ def storyPannel(surface, monkey, enemy, text):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 return True
         pygame.display.update()
+
+def applyBackLine(screen, positionX, positionY, text, size):
+    phrase = text
+    font = pygame.font.SysFont("Arial", size)
+    text_render = font.render(text, 1, (0, 0, 0))
+    x, y, w , h = text_render.get_rect()
+    x = positionX
+    y = positionY
+    bulle = text_render.get_rect()
+    x,y = bulle.topleft
+    for ligne in phrase.splitlines():
+        x,y = screen.blit(font.render(ligne,1,(0,0,0)),(x,y)).bottomleft
+    return screen
+
