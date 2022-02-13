@@ -1,0 +1,32 @@
+{
+    "Enemy": {
+        "Name": "Oiseau jaune 'alias titi'",
+        "Description": "Cui, cui, cuicui",
+        "LooseShout": "la la laaaa...",
+        "MiddleShout": "la la laaaa...",
+        "WinShout": "la la laaaa..."
+    },
+    "Turns": [
+        {
+            "Punch": "Oui ?",
+            "Responses": [
+                {
+                    "Sentence": "Ta carrière d'acteur est incroyable !",
+                    "Value": 1
+                },
+                {
+                    "Sentence": "Moi aussi je suis né en 1942",
+                    "Value": 0
+                },
+                {
+                    "Sentence": "Fais gaffe à qui tu te frottes tu risquerais de te bruler les ailes",
+                    "Value": -42
+                },
+                {
+                    "Sentence": "Je préfère Grominet",
+                    "Value": -1
+                }
+            ]
+        }
+    ]
+}

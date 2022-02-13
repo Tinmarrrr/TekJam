@@ -2,11 +2,11 @@ import json
 
 LEVELS = [
     "assets/conversations/conv_clodo.json",
+    "assets/conversations/conv_titi.json",
     "assets/conversations/conv_clodo.json",
-    "assets/conversations/conv_clodo.json",
-    "assets/conversations/conv_clodo.json",
-    "assets/conversations/conv_clodo.json",
-    "assets/conversations/conv_clodo.json"
+    "assets/conversations/conv_ronald.json",
+    "assets/conversations/conv_maman.json",
+    "assets/conversations/conv_noel.json"
 ]
 
 class InfosEnemy:

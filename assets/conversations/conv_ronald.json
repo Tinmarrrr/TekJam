@@ -1,0 +1,32 @@
+{
+    "Enemy": {
+        "Name": "Ronaldo burgerito",
+        "Description": "J'ai super faim",
+        "LooseShout": "Tu votes à droite toi non ?",
+        "MiddleShout": "Et sinon les bébés pandas blablabla...",
+        "WinShout": "Ha oui, c'est chouette !"
+    },
+    "Turns": [
+        {
+            "Punch": "Jsuis Spider Man Let's Goooooo",
+            "Responses": [
+                {
+                    "Sentence": "Envoie burger",
+                    "Value": -42
+                },
+                {
+                    "Sentence": "J'ai super faim tu pourrais me donner un burger s'il te plait ?",
+                    "Value": 1
+                },
+                {
+                    "Sentence": "J'ai super faim je pourrais avoir un repas équilibré s'il te plait ?",
+                    "Value": -1
+                },
+                {
+                    "Sentence": "J'préfère Quick déso",
+                    "Value": 0
+                }
+            ]
+        }
+    ]
+}

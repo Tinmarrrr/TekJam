@@ -1,0 +1,74 @@
+{
+    "Enemy": {
+        "Name": "La gaffe",
+        "Description": "",
+        "LooseShout": "Tu votes à droite toi non ?",
+        "MiddleShout": "Et sinon les bébés pandas blablabla...",
+        "WinShout": "Ha oui, c'est chouette !"
+    },
+    "Turns": [
+        {
+            "Punch": "'Salut à toi jeune entrepreneur !'",
+            "Responses": [
+                {
+                    "Sentence": "'Huitre' !",
+                    "Value": -42
+                },
+                {
+                    "Sentence": "Je t'ai déà vu sur Fortnite toi?",
+                    "Value": 0
+                },
+                {
+                    "Sentence": "Je passe un entretien d'embauche dans dix minutes",
+                    "Value": -1
+                },
+                {
+                    "Sentence": "",
+                    "Value": 1
+                }
+            ]
+        },
+        {
+            "Punch": "Tu sais quand tu achètes un vêtement ça fait mourrir la planète, et ça c'est pas cool.",
+            "Responses": [
+                {
+                    "Sentence": "Je pense que Valérie Pécresse va vraiment faire la différence aux prochaines éléctions",
+                    "Value": 1
+                },
+                {
+                    "Sentence": "Je peux pas m'en empêcher j'adooore faire les magasins..!",
+                    "Value": -1
+                },
+                {
+                    "Sentence": "De toute manière j'ai pas d'argent pour acheter de nouvelles fringues",
+                    "Value": 0
+                },
+                {
+                    "Sentence": "Le réchauffement climatique c'est cool bientôt on aura un Cancun dans le Morbillan !",
+                    "Value": -42
+                }
+            ]
+        },
+        {
+            "Punch": "Moi j'adore aller dans les petites friperies de Paris pour donner une deuxième vie aux vêtements !",
+            "Responses": [
+                {
+                    "Sentence": "J'ai oublié mon tote bag, tu pourrais me décaler une cigarette?",
+                    "Value": 1
+                },
+                {
+                    "Sentence": "Une quoi ..?",
+                    "Value": -1
+                },
+                {
+                    "Sentence": "Ya pas Luis Vuiton dans les friperies si ?",
+                    "Value": -42
+                },
+                {
+                    "Sentence": "Je suis déjà aller voir mais j'ai pas trouvé des trucs intéressants",
+                    "Value": 0
+                }
+            ]
+        }
+    ]
+}

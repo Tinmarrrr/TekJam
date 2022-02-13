@@ -17,6 +17,11 @@ def battle(surface, level, player, enemy):
     infosBt = InfosBattle()
     infosBt.loadJson(level)
 
+    rue = Character("assets/enemies/rue.png",
+                    "assets/enemies/rue.png", [0, 0])
+    
+    rue.setScale(1280, 720)
+    
     shout = infosBt.enemy.middleShout
     confidence = 0
     storyPannel(surface, player, enemy, infosBt.enemy.description)
@@ -24,6 +29,7 @@ def battle(surface, level, player, enemy):
     enemy.setScale()
     for turn in infosBt.turns:
         surface.fill((255, 255, 255))
+        surface.blit(rue.sprite, rue.logorect)
         running = True
         enemyText = EnemyTextBox(surface, 1280, 0, infosBt.enemy.name + ": " + shout)
         enemyPunch = EnemyTextBox(surface, 1280, 100, turn.punch)
