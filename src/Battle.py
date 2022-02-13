@@ -73,11 +73,14 @@ def battle(surface, level, player, enemy):
             surface.blit(enemy.sprite, enemy.rect)
             pygame.display.update()
     if confidence < 0:
-        resultBattle = "You loose agains " + infosBt.enemy.name
+        resultBattle = "Tu as perdu contre " + infosBt.enemy.name
+        storyPannel(surface, player, enemy, resultBattle)
         return False
-    elif confidence >= (len(infosBt.turns) / 3 * 2):
-        resultBattle = "You win against " + infosBt.enemy.name
+    elif confidence > 0:
+        resultBattle = "Tu as gagné contre " + infosBt.enemy.name + ",\nun nouvel objet est diponible!"
     else:
-        resultBattle = "You pass against " + infosBt.enemy.name
+        resultBattle = "Tu es passé tout juste contre " + infosBt.enemy.name + ",\ntu n'as pas réussi à dégoter un objet.."
+        storyPannel(surface, player, enemy, resultBattle)
+        return False
     storyPannel(surface, player, enemy, resultBattle)
     return True
