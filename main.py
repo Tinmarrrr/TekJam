@@ -12,35 +12,35 @@ def choose_menu():
     w, h = pygame.display.get_surface().get_size()
     ##gorille
     gorille = Character("assets/gorilla/gorilla_base.png",
-                        "assets/gorilla/gorilla_base.png", [100, 300], tab1, font)
+                        "assets/gorilla/gorilla_base.png", [100, 300])
     ##clodo
     clodo = Character("assets/enemies/full_clodo.png",
-                      "assets/enemies/head_clodo.png", [900, 300], tab2, font)
+                      "assets/enemies/head_clodo.png", [900, 300])
     clodo_button = pygame.Rect(10, 10, 300, 300)
     clodo_surf = pygame.Surface(clodo_button.size)
     ##titi
     titi = Character("assets/enemies/full_titi.png",
-                     "assets/enemies/head_titi.png", [900, 300], tab2, font)
+                     "assets/enemies/head_titi.png", [900, 300])
     titi_button = pygame.Rect(((w - 300) / 2), 10, 300, 300)
     titi_surf = pygame.Surface(titi_button.size)
     ##ronald
     ronald = Character("assets/enemies/full_ronald.png",
-                       "assets/enemies/head_ronald.png", [900, 300], tab2, font)
+                       "assets/enemies/head_ronald.png", [900, 300])
     ronald_button = pygame.Rect(10, (h - 300), 300, 300)
     ronald_surf = pygame.Surface(ronald_button.size)
     ##maman
     maman = Character("assets/enemies/full_maman_enfant.png",
-                      "assets/enemies/head_maman_enfant.png", [900, 300], tab2, font)
+                      "assets/enemies/head_maman_enfant.png", [900, 300])
     maman_button = pygame.Rect(((w - 300) / 2), (h - 300), 300, 300)
     maman_surf = pygame.Surface(maman_button.size)
     #gaston
     gaston = Character("assets/enemies/full_gaston.png",
-                       "assets/enemies/head_gaston.png", [900, 300], tab2, font)
+                       "assets/enemies/head_gaston.png", [900, 300])
     gaston_button = pygame.Rect((w - 300), 10, 300, 300)
     gaston_surf = pygame.Surface(gaston_button.size)
     #noel
     noel = Character("assets/enemies/full_noel.png",
-                     "assets/enemies/head_noel.png", [900, 300], tab2, font)
+                     "assets/enemies/head_noel.png", [900, 300])
     noel_button = pygame.Rect((w - 300), (h - 300), 300, 300)
     noel_surf = pygame.Surface(noel_button.size)
 
@@ -98,9 +98,6 @@ if __name__ == '__main__':
     pygame.font.init()
     font = pygame.font.SysFont('Arial', 20)
     surface = pygame.display.set_mode((WIDTH, HEIGHT))
-
-    tab1 = [" ", " "]
-    tab2 = [" ", " "]
 
     initMusic()
     menu = initMenu()
