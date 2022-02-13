@@ -10,9 +10,11 @@ def textBox(screen, positionX, positionY, text):
         y = positionY
         return screen.blit(text_render, (x, y))
 
-def storyPannel(surface, monkeyImg, enemyImg, text):
+def storyPannel(surface, monkey, enemy, text):
     surface.fill((255, 255, 255))
     enemyText = textBox(surface, 200, 500, text)
+    surface.blit(monkey.sprite, monkey.rect)
+    surface.blit(enemy.sprite, enemy.rect)
     while True:
         for event in pygame.event.get():
             if (event.type == pygame.QUIT):
