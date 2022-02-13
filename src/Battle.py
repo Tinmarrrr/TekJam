@@ -2,6 +2,7 @@ import pygame
 from src.Button import *
 
 def battle(surface, answers, font, turn):
+    surface.fill((255, 255, 255)) 
     enemyText = EnemyTextBox(surface, 1280, 0, "Qui a la plus grosse?")
     b1 = Button(surface, 80, 630, "Ta maman")
     b2 = Button(surface, 700, 630, "Ton papa")
@@ -10,7 +11,7 @@ def battle(surface, answers, font, turn):
     while True:
         for event in pygame.event.get():
             if (event.type == pygame.QUIT):
-                return 0
+                return False
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if b1.collidepoint(pygame.mouse.get_pos()):
                     button1()

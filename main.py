@@ -53,18 +53,20 @@ def choose_menu():
                 running = False
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
+                    infosBt = InfosBattle()
+                    infosBt.loadJson(0)
                     if clodo_button.collidepoint(event.pos):
-                        print("clodo")
+                        running = battle(surface, infosBt, font, 0)
                     if titi_button.collidepoint(event.pos):
-                        print("titi")
+                        running = battle(surface, infosBt, font, 0)
                     if gaston_button.collidepoint(event.pos):
-                        print("gaston")
+                        running = battle(surface, infosBt, font, 0)
                     if ronald_button.collidepoint(event.pos):
-                        print("ronlald")
+                        running = battle(surface, infosBt, font, 0)
                     if maman_button.collidepoint(event.pos):
-                        print("maman")
+                        running = battle(surface, infosBt, font, 0)
                     if noel_button.collidepoint(event.pos):
-                        print("noel")
+                        running = battle(surface, infosBt, font, 0)
         surface.fill((255, 255, 255))                   #BACK
         clodo.setLogoPos(10, 10)                        #CLODO
         titi.setLogoPos(((w - 300) / 2), 10)            #TITI
