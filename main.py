@@ -3,6 +3,7 @@ import pygame_menu
 
 from src.character import Character
 from src.Battle import battle
+from src.InfosBattle import InfosBattle
 
 WIDTH = 1280
 HEIGHT = 720
@@ -20,7 +21,7 @@ def choose_menu():
     w, h = pygame.display.get_surface().get_size()
     running = True
     start = False
-    lvl = 1
+    lvl = 0
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -46,7 +47,9 @@ def choose_menu():
             surface.blit(maman.headSprite, maman.logorect)
             surface.blit(noel.headSprite, noel.logorect)
         else:
-            battle(surface, parseJson(lvl), font, 0)
+            infosBt = InfosBattle()
+            if battle(surface, infosBt.loadJson(lvl), font, 0) == False:
+                running = False
         pygame.display.flip()
 
 
