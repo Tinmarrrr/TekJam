@@ -2,6 +2,7 @@ from distutils.log import info
 import pygame
 from src.Button import *
 from src.InfosBattle import *
+from src.character import Character
 
 def getEnemyResponse(value, infosBt):
     if value < 0:
@@ -11,7 +12,7 @@ def getEnemyResponse(value, infosBt):
     else:
         return infosBt.enemy.middleShout
 
-def battle(surface, level):
+def battle(surface, level, player, enemy):
     infosBt = InfosBattle()
     infosBt.loadJson(level)
 
@@ -47,6 +48,8 @@ def battle(surface, level):
                         confidence += turn.responses[3].value
                         shout = getEnemyResponse(turn.responses[3].value, infosBt)
                         running = False
+            surface.blit(player.sprite, player.rect)
+            surface.blit(enemy.sprite, enemy.rect)
             pygame.display.update()
     if confidence < 0:
         print("You loose agains ", infosBt.enemy.name)
@@ -54,14 +57,3 @@ def battle(surface, level):
         print("You win against ", infosBt.enemy.name)
     else:
         print("You pass against ", infosBt.enemy.name)
-
-
-    # text1 = font.render(answers[0][turn]["Choice 1"], False, (0, 0, 0))
-    # text2 = font.render(answers[0][turn]["Choice 2"], False, (0, 0, 0))
-    # text3 = font.render(answers[0][turn]["Choice 3"], False, (0, 0, 0))
-    # text4 = font.render(answers[1][turn]["Answer"], False, (0, 0, 0))
-
-    # surface.blit(text1, (200, 100))
-    # surface.blit(text2, (200, 200))
-    # surface.blit(text3, (200, 300))
-    # surface.blit(text4, (200, 400))
