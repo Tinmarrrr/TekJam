@@ -1,7 +1,7 @@
 {
     "Enemy": {
         "Name": "Guitariste écolo",
-        "Description": "Un individu non indentifié s'approche.\nTu ne l'avais pas vu mais malgré ton odorat très en retard par rapport aux autres gorilles, tu l'avais bien senti.\nLe man parait ivre, porte des fringues trop petites et une chaussure trouée.\nC'est à coup sur un intermitent du spectacle.\nEn général les artistes fument des roulées car c'est beaucoup moins cher mais celui-ci possède un paquet de garo.",
+        "Description": "Un individu non indentifié s'approche.\nTu ne l'avais pas vu mais malgré ton odorat très en retard par rapport aux autres gorilles,\ntu l'avais bien senti.\nLe man parait ivre, porte des fringues trop petites et une chaussure trouée.\nC'est à coup sur un intermitent du spectacle.\nEn général les artistes fument des roulées car c'est beaucoup moins cher mais celui-ci possède un paquet.",
         "LooseShout": "Tu votes à droite toi non ?",
         "MiddleShout": "Et sinon les bébés pandas blablabla...",
         "WinShout": "Ha oui, c'est chouette !"
