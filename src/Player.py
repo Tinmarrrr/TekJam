@@ -1,19 +1,11 @@
-##
-## EPITECH PROJECT, 2022
-## player
-## File description:
-## Player
-##
+from src import Character
 
-class Player:
-    hp = 15
-    lvl = 0
-    question = 0
-    damages = 6
-    def takeDamages(self, damages):
-        self.hp = self.hp - damages
-    def getPossibleAnswers():
-        return 0
-    def dealDamages(self, enemy):
-        enemy.takeDamages(self.damages + self.lvl)
-    
+class Player(Character):
+
+    def __init__(self, imagePath, position, texts, font):
+        Character.__init__(self, imagePath, position, texts, font)
+        self.streetCread = 10
+        self.lvl = 0
+
+    def changeStreetCread(self, value):
+        self.streetCread += value
