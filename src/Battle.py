@@ -2,6 +2,7 @@ import pygame
 from src.Button import *
 
 def battle(surface, answers, font, turn):
+    enemyText = EnemyTextBox(surface, 1280, 0, "Qui a la plus grosse?")
     b1 = Button(surface, 80, 630, "Ta maman")
     b2 = Button(surface, 700, 630, "Ton papa")
     b3 = Button(surface, 80, 680, "Ton oncle")
