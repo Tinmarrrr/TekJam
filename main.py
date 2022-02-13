@@ -67,10 +67,10 @@ def choose_menu():
                         battle(surface, 2, gorille, gaston)
                         lvl.append(2)
                     if ronald_button.collidepoint(event.pos):
-                        battle(surface, 3, gorille, maman)
+                        battle(surface, 3, gorille, ronald)
                         lvl.append(3)
                     if maman_button.collidepoint(event.pos):
-                        battle(surface, 4, gorille, ronald)
+                        battle(surface, 4, gorille, maman)
                         lvl.append(4)
                     if noel_button.collidepoint(event.pos):
                         battle(surface, 5, gorille, noel)

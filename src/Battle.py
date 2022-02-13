@@ -57,7 +57,7 @@ def battle(surface, level, player, enemy):
             pygame.display.update()
     if confidence < 0:
         resultBattle = "You loose agains " + infosBt.enemy.name
-    elif confidence >= 2:
+    elif confidence >= (len(infosBt.turns) / 3 * 2):
         resultBattle = "You win against " + infosBt.enemy.name
     else:
         resultBattle = "You pass against " + infosBt.enemy.name
