@@ -61,9 +61,9 @@ def choose_menu():
                     if gaston_button.collidepoint(event.pos):
                         running = battle(surface, 2, gorille, gaston)
                     if ronald_button.collidepoint(event.pos):
-                        running = battle(surface, 3, gorille, maman)
+                        running = battle(surface, 3, gorille, ronald)
                     if maman_button.collidepoint(event.pos):
-                        running = battle(surface, 4, gorille, ronald)
+                        running = battle(surface, 4, gorille, maman)
                     if noel_button.collidepoint(event.pos):
                         running = battle(surface, 5, gorille, noel)
         surface.fill((255, 255, 255))                   #BACK
