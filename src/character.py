@@ -14,11 +14,20 @@ class Character:
         self.logorect.y = position[1]
 
         self.textIndex = 0
-        self.setScale()
+        # self.setScale()
 
-    def setScale(self, x = 220, y = 220):
+    def setScale(self, x = 300, y = 300):
         self.sprite = pygame.transform.scale(self.sprite, (x, y))
 
     def setLogoPos(self, x, y):
         self.logorect.x = x;
         self.logorect.y = y;
+
+    def getRect(self):
+        return self.sprite.get_bounding_rect()
+    
+    def setPosition(self, x, y):
+        self.logorect.x = x
+        self.logorect.y = y
+        self.rect.x = x
+        self.rect.y = y
