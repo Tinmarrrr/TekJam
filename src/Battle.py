@@ -2,8 +2,9 @@ from distutils.log import info
 import pygame
 from src.Button import *
 from src.InfosBattle import *
+from src.character import Character
 
-def battle(surface, level):
+def battle(surface, level, player, enemy):
     infosBt = InfosBattle()
     infosBt.loadJson(level)
 
@@ -35,6 +36,8 @@ def battle(surface, level):
                     if b4.collidepoint(pygame.mouse.get_pos()):
                         confidence += turn.responses[3].value
                         running = False
+            surface.blit(player.sprite, player.rect)
+            surface.blit(enemy.sprite, enemy.rect)
             pygame.display.update()
 
 
