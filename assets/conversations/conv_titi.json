@@ -27,6 +27,27 @@
                     "Value": -1
                 }
             ]
+        },
+        {
+            "Punch": "Zé cru voir un grominet",
+            "Responses": [
+                {
+                    "Sentence": "Mais t'as raison! moi aussi!",
+                    "Value": 1
+                },
+                {
+                    "Sentence": "Oulah faut ralentir sur les graines.",
+                    "Value": 0
+                },
+                {
+                    "Sentence": "Ah au fait j'ai la grippe aviaire <3",
+                    "Value": -42
+                },
+                {
+                    "Sentence": "les coccinelles sont des coléoptères.",
+                    "Value": -1
+                }
+            ]
         }
     ]
 }

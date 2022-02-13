@@ -27,6 +27,27 @@
                     "Value": 1
                 }
             ]
+        },
+        {
+            "Punch": "Fais gaffe je sais ou t'habites!",
+            "Responses": [
+                {
+                    "Sentence": "j'allume la cheminé le 24",
+                    "Value": -1
+                },
+                {
+                    "Sentence": "Tu t'es pas fait détrôner par Amazon ?",
+                    "Value": -42
+                },
+                {
+                    "Sentence": "Je peux avoir une ps5 stp ?",
+                    "Value": 1
+                },
+                {
+                    "Sentence": "Tu veux un cookie ?",
+                    "Value": 1
+                }
+            ]
         }
     ]
 }
