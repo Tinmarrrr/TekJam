@@ -3,6 +3,7 @@ import pygame
 from src.Button import *
 from src.InfosBattle import *
 from src.character import Character
+from src.Story import storyPannel
 
 def getEnemyResponse(value, infosBt):
     if value < 0:
@@ -18,6 +19,9 @@ def battle(surface, level, player, enemy):
 
     shout = infosBt.enemy.middleShout
     confidence = 0
+    storyPannel(surface, player, enemy, infosBt.enemy.description)
+    player.setScale()
+    enemy.setScale()
     for turn in infosBt.turns:
         surface.fill((255, 255, 255))
         running = True
@@ -52,8 +56,10 @@ def battle(surface, level, player, enemy):
             surface.blit(enemy.sprite, enemy.rect)
             pygame.display.update()
     if confidence < 0:
-        print("You loose agains ", infosBt.enemy.name)
+        resultBattle = "You loose agains " + infosBt.enemy.name
     elif confidence >= 2:
-        print("You win against ", infosBt.enemy.name)
+        resultBattle = "You win against " + infosBt.enemy.name
     else:
-        print("You pass against ", infosBt.enemy.name)
+        resultBattle = "You pass against " + infosBt.enemy.name
+    storyPannel(surface, player, enemy, resultBattle)
+    return True

@@ -1,13 +1,16 @@
+import random
 import pygame
 import pygame_menu
 
 from src.character import Character
 from src.Battle import battle
-from src.InfosBattle import InfosBattle
+from src.InfosBattle import LEVELS, InfosBattle
 from src.Story import storyPannel
+from src.Button import *
 
 WIDTH = 1280
 HEIGHT = 720
+lvl = [0, 1, 2, 3, 4, 5]
 
 def choose_menu():
     w, h = pygame.display.get_surface().get_size()
@@ -47,32 +50,31 @@ def choose_menu():
 
     running = True
     start = False
-    lvl = 0
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            elif event.type == pygame.MOUSEBUTTONUP:
+            elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     infosBt = InfosBattle()
                     if clodo_button.collidepoint(event.pos):
-                        storyPannel(surface, gorille, clodo, "c'est l'histoire de la vie")
-                        running = battle(surface, 0, gorille, clodo)
+                        battle(surface, 0, gorille, clodo)
+                        lvl.append(0)
                     if titi_button.collidepoint(event.pos):
-                        storyPannel(surface, gorille, titi, "c'est l'histoire de la vie")
-                        running = battle(surface, 1, gorille, titi)
+                        battle(surface, 1, gorille, titi)
+                        lvl.append(1)
                     if gaston_button.collidepoint(event.pos):
-                        storyPannel(surface, gorille, gaston, "c'est l'histoire de la vie")
-                        running = battle(surface, 2, gorille, gaston)
+                        battle(surface, 2, gorille, gaston)
+                        lvl.append(2)
                     if ronald_button.collidepoint(event.pos):
-                        storyPannel(surface, gorille, maman, "c'est l'histoire de la vie")
-                        running = battle(surface, 3, gorille, maman)
+                        battle(surface, 3, gorille, maman)
+                        lvl.append(3)
                     if maman_button.collidepoint(event.pos):
-                        storyPannel(surface, gorille, ronald, "c'est l'histoire de la vie")
-                        running = battle(surface, 4, gorille, ronald)
+                        battle(surface, 4, gorille, ronald)
+                        lvl.append(4)
                     if noel_button.collidepoint(event.pos):
-                        storyPannel(surface, gorille, noel, "c'est l'histoire de la vie")
-                        running = battle(surface, 5, gorille, noel)
+                        battle(surface, 5, gorille, noel)
+                        lvl.append(5)
         surface.fill((255, 255, 255))                   #BACK
         clodo.setLogoPos(10, 10)                        #CLODO
         titi.setLogoPos(((w - 300) / 2), 10)            #TITI
@@ -93,10 +95,67 @@ def initMusic():
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(0.0)
 
+ITEMS = [
+    "assets/gorilla/gorilla_cigarette.png",
+    "assets/gorilla/gorilla_casquette.png",
+    "assets/gorilla/gorilla_tie.png",
+    "assets/gorilla/gorilla_burger.png",
+    "assets/gorilla/gorilla_enfant.png",
+    "assets/gorilla/gorilla_noel.png",
+]
+
+def nbUndiscover(listItems):
+    count = 0
+    for item in listItems:
+        if item.rect.x != 0:
+            count += 1
+    return count
+
+def perso_menu():
+    w, h = pygame.display.get_surface().get_size()
+    gorille = Character("assets/gorilla/gorilla_base.png",
+                        "assets/gorilla/gorilla_base.png", [0, 0])
+    
+    gorille.setScale(700, 700)
+    running = True
+
+    listItems = []
+    for i in lvl:
+        item = Character(ITEMS[i], ITEMS[i], [0, 0])
+        item.setScale(700, 700)
+        listItems.append(item)
+        item.setPosition(3000, 3000)
+
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    if button.collidepoint(pygame.mouse.get_pos()):
+                        for item in listItems:
+                            if item.rect.x != 0:
+                                item.setPosition(0, 0)
+                                break
+                    for item in listItems:
+                        if item.getRect().collidepoint(event.pos):
+                            if item.logorect.x == 0:
+                                item.setPosition(3000, 3000)
+                            else:
+                                item.setPosition(0, 0)
+        surface.fill((255, 255, 255))
+        button = Button(surface, 800, 300, "? " + str(nbUndiscover(listItems)) + " objets disponibles ?")
+        surface.blit(gorille.sprite, gorille.logorect)
+        for item in listItems:
+            surface.blit(item.sprite, item.logorect)
+        pygame.display.flip()
+    return
+
 def initMenu():
     menu = pygame_menu.Menu('LA JOUTE', WIDTH, HEIGHT,
                             theme=pygame_menu.themes.THEME_GREEN)
     menu.add.button('Play', choose_menu)
+    menu.add.button('Perso', perso_menu)
     menu.add.button('Quit', pygame_menu.events.EXIT)
     return menu
 
