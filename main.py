@@ -80,49 +80,6 @@ def choose_menu():
         surface.blit(noel.headSprite, noel.logorect)
         pygame.display.flip()
 
-def start_the_game():
-    running = True
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT:
-                    gorille.nextText()
-                if event.key == pygame.K_RIGHT:
-                    clodo.nextText()
-        surface.fill((255, 255, 255))
-        surface.blit(gorille.sprite, gorille.rect)
-        surface.blit(clodo.sprite, clodo.rect)
-        surface.blit(gorille.currentText, (200, 200))
-        surface.blit(clodo.currentText, (800, 200))
-        pygame.display.flip()
-        if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT:
-                    start = True
-        surface.fill((255, 255, 255))
-
-        clodo.setLogoPos(10, 10) #1
-        gaston.setLogoPos(((w - 300) / 2), 10) #2
-        titi.setLogoPos(((w - 300) / 1), 10) #3
-
-        ronald.setLogoPos((10), ((h - 300) / 1)) #4
-        maman.setLogoPos(((w - 300) / 2), ((h - 300) / 1)) #5
-        noel.setLogoPos((w - 300), (h - 300)) #6
-
-        if start == False:
-            surface.blit(clodo.headSprite, clodo.logorect)
-            surface.blit(titi.headSprite, titi.logorect)
-            surface.blit(gaston.headSprite, gaston.logorect)
-            surface.blit(ronald.headSprite, ronald.logorect)
-            surface.blit(maman.headSprite, maman.logorect)
-            surface.blit(noel.headSprite, noel.logorect)
-        else:
-            infosBt = InfosBattle()
-            if battle(surface, infosBt.loadJson(lvl), font, 0) == False:
-                running = False
-        pygame.display.flip()
-
 def initMusic():
     pygame.mixer.music.load("assets/Music/main_theme.mp3")
     pygame.mixer.music.play(-1)
